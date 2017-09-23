@@ -1,0 +1,150 @@
+Supported Cards:
+================
+
+1fc9/4010, 1fc9/4010,CX4,	"TN4010 Clean SROM"
+1fc9/4022, 1fc9/3015,QT2025,	"TN9310 10GbE SFP+ Ethernet Adapter"
+1fc9/4022, 1186/4d00,QT2025,	"D-Link DXE-810S 10GbE SFP+ Ethernet Adapter"
+1fc9/4022, 1043/8709,QT2025,	"ASUS XG-C100F 10GbE SFP+ Ethernet Adapter"
+1fc9/4022, 1432/8103,QT2025,	"Edimax EN-8102PF 10GbE SPF+ Ethernet Adapter"
+1fc9/4024, 1fc9/3015,MV88X3120,	"TN9210 10GBase-T Ethernet Adapter"
+1fc9/4025, 1fc9/3015,AQ2104,	"TN9510 10GBase-T/NBASE-T Ethernet Adapter"
+1fc9/4025, 1186/2900,AQ2104,	"D-Link DXE-810T 10GBase-T Ethernet Adapter"
+1fc9/4025, 1432/8102,AQ2104,	"Edimax EN-8102P 10GbE Ethernet Adapter"
+1fc9/4025, 105a/7203,AQ2104,	"Promise Technology SANLink3 NBase-T1"
+1fc9/4026, 1fc9/3015,TLK10232,	"TN9610 10GbE SFP+ Ethernet Adapter"
+
+
+- Kernel versions supported: 2.6.32-4.x
+
+Version 0.3.6.7 3/7/13
+======================
+
+- Load MAC FW at initialization time (insmod)
+- Reduced module memory footprint by freeing PHY and MAC FW memory file after initialization phase.
+
+Version 0.3.6.7 16/7/13
+=======================
+
+- Added suspend/resume support to make install
+
+Version 0.3.6.7 17/7/13
+=======================
+
+- Fixed MODPOST warnings.
+- Added retry to QT2025 sfp+ link change.
+
+Version 0.3.6.7 24/7/13
+======================
+
+- Added retry to CX4 link change.
+
+Version 0.3.6.7 29/7/13
+======================
+
+- Support RHEL >= 6.3 
+
+Version 0.3.6.7 4/8/13
+======================
+
+- Support MAC flow control
+
+Version 0.3.6.8 12/8/13
+======================
+
+- Fixed MTU bug
+
+Version 0.3.6.9 20/8/13
+=======================
+
+- Reduced memory foot print (by MAC FW size)
+
+Version 0.3.6.10 13/10/13
+=========================
+
+- Ethtool support update
+
+Version 0.3.6.10 21/10/13
+=========================
+
+- Multiple cards support
+
+Version 0.3.6.10 22/10/13
+=========================
+
+- Kernel 3.11 support
+
+Version 0.3.6.10 3/11/13
+=========================
+
+- Work around false tcp checksum error 
+
+Version 0.3.6.10 4/11/13
+=========================
+
+- Marvell PHY FW 2.4.1.0
+
+Version 0.3.6.11 8/12/13
+=========================
+
+- SFP+ 1G modules support
+- Ethtool rx checksum report fix
+
+Version 0.3.6.11 17/12/13
+=========================
+
+- New MDIO
+
+Version 0.3.6.11 25/12/13
+=========================
+
+- bdx_skb_rx_add_frag() 
+- Receive buffer allocation low memory warning
+- Makefile checks is /etc/pm exists
+
+Version 0.3.6.11 7/1/14
+=========================
+
+- Fixed VLAN bug
+
+Version 0.3.6.11 10/4/14
+=========================
+
+- Removed TN2080 PHY support
+- Added WARNING compilation flag.
+  (The default release version does not display warnings unless compiled with #define WARNING)
+- Work around H/W UDP checksum false err.
+- support ethtool -p for kernel version < 3.0
+
+
+Version 0.3.6.12 1/1/2015
+===========================
+
+- Support TI TLK10232 phy
+- Remove old MDIO interface
+- Support Aquantia AQ2104 phy
+- Merge D-Link special APM firmware and IDs into Jumbo Driver
+- Fix RHEL7 Compilation error
+- Support Speed force (100,1000,2500,5000,10000)
+- Support ethtool -s 
+- Support ethtool -p for kernel version < 3.0 & > 3.13
+ Known Issues:
+	- Ehtool Info does not show support for 2.5GBASE-T & 5GBASE-T, but it could be set for supported devices.
+
+Version 0.3.6.12.1 21/5/2015
+===========================
+- New FW ver 2.3.5 for AQ2104 (Dev-ID 4025).
+
+Version 0.3.6.12.2 15/7/2015
+===========================
+- New FW ver 2.4.2 for AQ2104 (Dev-ID 4025).
+- Support kernel 4.0-4.1
+
+Version 0.3.6.12.3 10/7/2016
+===========================
+- Add support for RHEL6.8
+
+Version 0.3.6.12.4 18/7/2016
+===========================
+- Add support for Linux Kernel 4.7
+- New adapter names (see table above)
+
