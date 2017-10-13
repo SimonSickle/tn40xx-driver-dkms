@@ -3175,11 +3175,7 @@ static int bdx_tx_transmit(struct sk_buff *skb, struct net_device *ndev)
     }
     dbg_printRegs(priv,(char *)"TX");
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 7,0)
-    ndev->trans_start = jiffies;
-#else
     netif_trans_update(ndev);
-#endif
 
     priv->net_stats.tx_packets++;
     priv->net_stats.tx_bytes += skb->len;
