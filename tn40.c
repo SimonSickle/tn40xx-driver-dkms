@@ -2416,7 +2416,10 @@ static int bdx_rx_receive(struct bdx_priv *priv, struct rxd_fifo *f, int budget)
     START_TIMER(bdx_rx_receive);
     ENTER;
 
+    #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 11, 0)
     priv->ndev->last_rx = jiffies;
+    #endif
+    
     f->m.wptr       = READ_REG(priv, f->m.reg_WPTR) & TXF_WPTR_WR_PTR;
     size = f->m.wptr - f->m.rptr;
     if (size < 0)
